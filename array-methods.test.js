@@ -1,4 +1,4 @@
-const {mapper, filterer, indexer} = require('./array-methods.js');
+const {mapper, filterer, indexer, reducer} = require('./array-methods.js');
 
 const emotionalArray = [
   'Happy',
@@ -7,6 +7,12 @@ const emotionalArray = [
   'Overwhelmed',
   'Joyous', 
 ];
+
+const numberArray = [
+  33,
+  66,
+  1,
+]
 
 describe('array functions', () => {
   describe('array.map but harder function', () => {
@@ -49,9 +55,17 @@ describe('array functions', () => {
 
   });
 
-  // describe('array.reduce but harder function', () => {
-  //   it('continuously adds the values in an array and returns the final accumulator value', () => {});
-  // });
+  describe('array.reduce but harder function', () => {
+    it('continuously adds the values in an array and returns the final accumulator value', () => {});
+    let accumulator = 0; 
+    let total = 0; 
+    const reducedArray = reducer(numberArray,((accumulator), item => {
+      total = accumulator += item
+        return(total); 
+    })); 
+
+    expect(reducedArray).toEqual([100])
+  });
 
   // describe('array.every but harder function', () => {
   //   it('takes in an array and returns true if all values are true, otherwise returns false', () => {});

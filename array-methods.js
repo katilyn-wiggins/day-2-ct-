@@ -27,9 +27,21 @@ const indexer = (array, callback) => {
   return newArray;
 };
 
+const reducer = (array, callback) => { 
+  let newArray = [];
+  let total = 0; 
+  for (let index = 0; index < array.length; index++) { 
+    total += array[index]; 
+    newArray = [total];
+    
+  }
+  return newArray;
+};
+
 module.exports = {
   mapper, 
   filterer, 
   indexer, 
+  reducer, 
 }; 
 
