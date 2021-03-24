@@ -17,8 +17,19 @@ const filterer = (array, callback) => {
   return newArray;
 };
 
+const indexer = (array, callback) => { 
+  let newArray = [];
+  for (let index = 0; index < array.length; index++) {
+    if(callback(array[index])) {
+     newArray = [...newArray, index];
+    }  
+  }
+  return newArray;
+};
+
 module.exports = {
   mapper, 
   filterer, 
+  indexer, 
 }; 
 

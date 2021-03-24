@@ -1,4 +1,4 @@
-const {mapper, filterer} = require('./array-methods.js');
+const {mapper, filterer, indexer} = require('./array-methods.js');
 
 const emotionalArray = [
   'Happy',
@@ -38,9 +38,16 @@ describe('array functions', () => {
     });
   });
 
-  // describe('array.findIndex but harder function', () => {
-  //   it('takes in an array and returns the index of the first item whose callback returns true', () => {});
-  // });
+  describe('array.findIndex but harder function', () => {
+    it('takes in an array and returns the index of the first item whose callback returns true', () => {});
+
+    const indexedItem = indexer(emotionalArray, item => {
+      return(item.charAt(0) === 'J')
+    });
+
+    expect(indexedItem).toEqual([4])
+
+  });
 
   // describe('array.reduce but harder function', () => {
   //   it('continuously adds the values in an array and returns the final accumulator value', () => {});
