@@ -21,21 +21,20 @@ const indexer = (array, callback) => {
   let newArray = [];
   for (let index = 0; index < array.length; index++) {
     if(callback(array[index])) {
-     newArray = [...newArray, index];
+     return newArray = [...newArray, index];
     }  
+    
   }
-  return newArray;
+ return -1 
 };
 
 const reducer = (array, callback) => { 
-  let newArray = [];
-  let total = 0; 
-  for (let index = 0; index < array.length; index++) { 
-    total += array[index]; 
-    newArray = [total];
+  let accumulator = array[0];  
+  for (let index = 1; index < array.length; index++) {
     
+  accumulator = callback(accumulator, array[index]);
   }
-  return newArray;
+  return(accumulator);
 };
 
 module.exports = {

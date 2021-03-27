@@ -48,23 +48,31 @@ describe('array functions', () => {
     it('takes in an array and returns the index of the first item whose callback returns true', () => {});
 
     const indexedItem = indexer(emotionalArray, item => {
-      return(item.charAt(0) === 'J')
+      if(item.charAt(0) === 'J') 
+        return(item.charAt(0)); 
     });
 
     expect(indexedItem).toEqual([4])
 
   });
 
+  describe('array.findIndex but harder function, -1 test', () => {
+    it('takes in an array and returns the index of the first item whose callback returns true', () => {});
+
+    const indexedItem = indexer(emotionalArray, item => {
+      if(item.charAt(0) === 'Z') 
+        return(item.charAt(0)); 
+    });
+
+    expect(indexedItem).toEqual(-1)
+
+  });
+
   describe('array.reduce but harder function', () => {
     it('continuously adds the values in an array and returns the final accumulator value', () => {});
-    let accumulator = 0; 
-    let total = 0; 
-    const reducedArray = reducer(numberArray,((accumulator), item => {
-      total = accumulator += item
-        return(total); 
-    })); 
-
-    expect(reducedArray).toEqual([100])
+    const callback = (accumulator, item) => (accumulator + item); 
+  
+    expect(reducer(numberArray, callback)).toEqual(100)
   });
 
   // describe('array.every but harder function', () => {
