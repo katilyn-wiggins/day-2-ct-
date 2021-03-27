@@ -38,7 +38,12 @@ const reducer = (array, callback) => {
 };
 
 const everyer = (array, callback) => {
-  
+  for (let index = 0; index < array.length; index++) {
+    if(callback(array[index])) {
+     return false;
+    }   
+    return true; 
+  }
 }; 
 
 module.exports = {

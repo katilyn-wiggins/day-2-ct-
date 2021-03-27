@@ -75,16 +75,30 @@ describe('array functions', () => {
     expect(reducer(numberArray, callback)).toEqual(100)
   });
 
+
   describe('array.Every but harder function', () => {
-    it('takes in an array and returns true if all items are true/truthy, otherwise returns false', () => {});
-
-    const isEvery = everyer(numberArray, item => {
+      it('takes in an array and returns true if all items are true/truthy, otherwise returns false', () => {});
   
-    });
-
-    expect(isEvery).toEqual('')
+      const isEvery = everyer(emotionalArray, item => {
+        if(!item.length > 2) 
+          return(item); 
+      });
+   
+    expect(isEvery).toEqual(true)
 
   });
+
+  describe('array.Every but harder function, other result', () => {
+    it('takes in an array and returns false if any items are false/falsey', () => {});
+
+    const isEvery = everyer(emotionalArray, item => {
+      if(item.length > 2) 
+        return(item); 
+    });
+ 
+  expect(isEvery).toEqual(false)
+
+});
 });
 
 
