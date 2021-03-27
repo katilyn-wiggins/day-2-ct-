@@ -37,10 +37,15 @@ const reducer = (array, callback) => {
   return(accumulator);
 };
 
+const everyer = (array, callback) => {
+  
+}; 
+
 module.exports = {
   mapper, 
   filterer, 
   indexer, 
   reducer, 
+  everyer, 
 }; 
 

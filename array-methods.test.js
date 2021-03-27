@@ -75,9 +75,16 @@ describe('array functions', () => {
     expect(reducer(numberArray, callback)).toEqual(100)
   });
 
-  // describe('array.every but harder function', () => {
-  //   it('takes in an array and returns true if all values are true, otherwise returns false', () => {});
-  // });
+  describe('array.Every but harder function', () => {
+    it('takes in an array and returns the index of the first item whose callback returns true', () => {});
+
+    const isEvery = everyer(numberArray, item => {
+  
+    });
+
+    expect(isEvery).toEqual('')
+
+  });
 });
 
 
