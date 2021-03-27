@@ -1,4 +1,4 @@
-const {mapper, filterer, indexer, reducer} = require('./array-methods.js');
+const {mapper, filterer, indexer, reducer, everyer} = require('./array-methods.js');
 
 const emotionalArray = [
   'Happy',
@@ -76,7 +76,7 @@ describe('array functions', () => {
   });
 
   describe('array.Every but harder function', () => {
-    it('takes in an array and returns the index of the first item whose callback returns true', () => {});
+    it('takes in an array and returns true if all items are true/truthy, otherwise returns false', () => {});
 
     const isEvery = everyer(numberArray, item => {
   
